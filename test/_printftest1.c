@@ -35,12 +35,11 @@ void p_float(va_list args)
 void p_string(va_list args)
 {
 	char *s;
+	int i;
 
 	s = va_arg(args, char*);
-	if (s)
-		printf("%s", s);
-	else
-		printf("%p", s);
+	while (s[i] != '\0')
+	_putchar(s[i++]);
 }
 /**
  * print_all - prints anything
@@ -48,13 +47,13 @@ void p_string(va_list args)
 */
 int _printf(const char * format, ...)
 {
-	int i, j;
+	int i, j, perc = 0;
 
 	fn_t fmt[] = {
-		{"%c", p_char},
-		{"%i", p_int},
-		{"%f", p_float},
-		{"%s", p_string},
+		{"c", p_char},
+		{"i", p_int},
+		{"f", p_float},
+		{"s", p_string},
 		{NULL, NULL}
 	};
 
@@ -62,20 +61,24 @@ int _printf(const char * format, ...)
 
 	va_start(args, format);
 	i = 0;
+	
 	while (format[i] != '\0')
-	{
-		j = 0;
-		while (fmt[j].ob != NULL)
+	{	
+	j = 0;
+	if (format[i - 1] == 'c' || format[i - 1 ] == 'i'|| format[i - 1] == 'f'|| format[i - 1] == 's')
+		perc = 0;
+	while (fmt[j].ob != NULL)
 		{
-			if (format[i] == *fmt[j].ob)
+			if (format[i] == '%' && (format[i + 1] == *fmt[j].ob))
 			{
 				fmt[j].type(args);
+				perc = 1;
 				break;
 			}
 			j++;
 		}
-	/*if (fmt[j].ob != NULL && format[i + 1] != '\0')
-	printf(", ");*/
+	if(perc == 0) 
+	_putchar(format[i]);
 	i++;
 	}
 va_end(args);
