@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 /**
  * p_int - prints integer
  * @args: va_list
@@ -35,7 +36,7 @@ void p_float(va_list args)
 void p_string(va_list args)
 {
 	char *s;
-	int i;
+	int i = 0;
 
 	s = va_arg(args, char*);
 	while (s[i] != '\0')
@@ -47,7 +48,7 @@ void p_string(va_list args)
 */
 int _printf(const char * format, ...)
 {
-	int i, j, perc = 0;
+	int i, j;
 
 	fn_t fmt[] = {
 		{"c", p_char},
@@ -64,24 +65,27 @@ int _printf(const char * format, ...)
 	
 	while (format[i] != '\0')
 	{	
-	j = 0;
-	if (format[i - 1] == 'c' || format[i - 1 ] == 'i'|| format[i - 1] == 'f'|| format[i - 1] == 's')
-		perc = 0;
-	while (fmt[j].ob != NULL)
-		{
-			if (format[i] == '%' && (format[i + 1] == *fmt[j].ob))
+	if (format[i] == '%')
+	{
+		j = 0;
+		i++;
+		while (fmt[j].ob != NULL)
 			{
+				if (format[i] == *fmt[j].ob)
+				{
 				fmt[j].type(args);
-				perc = 1;
-				break;
-			}
+				}
+	
 			j++;
-		}
-	if(perc == 0) 
+			}
+
+	}
+	else
+	{
 	_putchar(format[i]);
+	}
 	i++;
 	}
 va_end(args);
-_putchar(10);
 return (0);
 }
