@@ -32,12 +32,14 @@ return (i);
 
 int p_int(va_list args)
 {
-	char *s;
+	char *num;
+	int size;
 	int i = 0;
 
-	s = va_arg(args, char*);
-	while (s[i] != '\0')
-	_putchar(s[i++] + '0');
+	num = va_arg(args, char*);
+	size = sizeof(num);
+	while (i < size)
+	_putchar(num[i++]);
 return (i);
 }
 int p_percent(va_list args __attribute__((unused)))
