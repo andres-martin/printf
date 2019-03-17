@@ -24,21 +24,20 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (copyfmt[i] != '\0')
 	{
-	if (copyfmt[i] == '%')
-	{
-		j = 0;
-		i++;
-		while (fmt[j].ob != NULL)
-		{
-			if (copyfmt[i] == *fmt[j].ob)
-				count += fmt[j].type(args);
-			j++;
+		if (copyfmt[i] == '%')
+		{	
+			j = 0;
+			i++;
+			while (fmt[j].ob != NULL)
+			{
+				if (copyfmt[i] == *fmt[j].ob)
+					count += fmt[j].type(args);
+				j++;
+			}
 		}
-
-	}
-	else
-		count += _putchar(&copyfmt[i]);
-	i++;
+		else
+			count += _putchar(&copyfmt[i]);
+		i++;
 	}
 va_end(args);
 return (count);
