@@ -14,8 +14,7 @@ char *change_base(int num, int base)
 	ptr = malloc(sizeof(char) * 50);
 	if (ptr == '\0')
 	{
-	
-	return (0);
+		return (0);
 	}
 	ptr[49] = '\0';
 	do {
