@@ -60,27 +60,20 @@ int _printf(const char * format, ...)
 	va_list args;
 
 	va_start(args, format);
-	i = 0;
 	
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0';)
 	{	
-	j = 0;
-	/*if (format[i - 1] == 'c' || format[i - 1 ] == 'i'|| format[i - 1] == 'f'|| format[i - 1] == 's')
-		perc = 0;*/
-	while (fmt[j].ob != NULL)
-	{
+	if (format[i] != '%')
+	_putchar(format[i]);
+	i++;
+		for (j = 0; fmt[j].ob != NULL; j++)
+		{
 			if (format[i] == '%' && (format[i + 1] == *fmt[j].ob))
 			{
 				fmt[j].type(args);
-				break;
 			}
-			j++;
-	}
-	/*if(perc == 0) 
-	_putchar(format[i]);*/
-	i++;
+		}
 	}
 va_end(args);
-_putchar(10);
 return (0);
 }
