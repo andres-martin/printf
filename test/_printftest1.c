@@ -39,7 +39,7 @@ void p_string(va_list args)
 
 	s = va_arg(args, char*);
 	while (s[i] != '\0')
-	_putchar(s[i++]);
+		_putchar(s[i++]);
 }
 /**
  * print_all - prints anything
@@ -47,7 +47,7 @@ void p_string(va_list args)
 */
 int _printf(const char * format, ...)
 {
-	int i, j, perc = 0;
+	int i, j;
 
 	fn_t fmt[] = {
 		{"c", p_char},
@@ -65,20 +65,19 @@ int _printf(const char * format, ...)
 	while (format[i] != '\0')
 	{	
 	j = 0;
-	if (format[i - 1] == 'c' || format[i - 1 ] == 'i'|| format[i - 1] == 'f'|| format[i - 1] == 's')
-		perc = 0;
+	/*if (format[i - 1] == 'c' || format[i - 1 ] == 'i'|| format[i - 1] == 'f'|| format[i - 1] == 's')
+		perc = 0;*/
 	while (fmt[j].ob != NULL)
-		{
+	{
 			if (format[i] == '%' && (format[i + 1] == *fmt[j].ob))
 			{
 				fmt[j].type(args);
-				perc = 1;
 				break;
 			}
 			j++;
-		}
-	if(perc == 0) 
-	_putchar(format[i]);
+	}
+	/*if(perc == 0) 
+	_putchar(format[i]);*/
 	i++;
 	}
 va_end(args);
