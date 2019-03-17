@@ -28,6 +28,18 @@ int p_string(va_list args)
 	_putchar(s[i++]);
 return (i);
 }
+
+
+int p_int(va_list args)
+{
+	char *s;
+	int i = 0;
+
+	s = va_arg(args, char*);
+	while (s[i] != '\0')
+	_putchar(s[i++] + '0');
+return (i);
+}
 int p_percent(va_list args __attribute__((unused)))
 {
 	_putchar('%');
@@ -44,6 +56,8 @@ int _printf(const char * format, ...)
 	fn_t fmt[] = {
 		{"c", p_char},
 		{"s", p_string},
+		{"i", p_int},
+		{"d", p_int},
 		{"%", p_percent},
 		{NULL, NULL}
 	};
