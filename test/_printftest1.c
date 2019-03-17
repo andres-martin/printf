@@ -3,37 +3,22 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
- * p_int - prints integer
- * @args: va_list
-*/
-void p_int(va_list args)
-{
-	printf("%i", va_arg(args, int));
-}
-/**
  * p_char - prints char
  * @args: va_list
 */
-void p_char(va_list args)
+int p_char(va_list args)
 {
 	char ch;
 	
 	ch = va_arg(args, int);
 	_putchar(ch);
-}
-/**
- * p_float - prints float
- * @args: va_list
-*/
-void p_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
+return (1);
 }
 /**
  * p_string - prints string
  * @args: va_list
 */
-void p_string(va_list args)
+int p_string(va_list args)
 {
 	char *s;
 	int i = 0;
@@ -41,6 +26,12 @@ void p_string(va_list args)
 	s = va_arg(args, char*);
 	while (s[i] != '\0')
 	_putchar(s[i++]);
+return (i);
+}
+int p_percent(va_list args __attribute__((unused)))
+{
+	_putchar('%');
+return (1);
 }
 /**
  * print_all - prints anything
@@ -48,13 +39,12 @@ void p_string(va_list args)
 */
 int _printf(const char * format, ...)
 {
-	int i, j;
+	int i, j, count = 0;
 
 	fn_t fmt[] = {
 		{"c", p_char},
-		{"i", p_int},
-		{"f", p_float},
 		{"s", p_string},
+		{"%", p_percent},
 		{NULL, NULL}
 	};
 
@@ -73,7 +63,7 @@ int _printf(const char * format, ...)
 			{
 				if (format[i] == *fmt[j].ob)
 				{
-				fmt[j].type(args);
+				count += fmt[j].type(args);
 				}
 	
 			j++;
@@ -83,9 +73,11 @@ int _printf(const char * format, ...)
 	else
 	{
 	_putchar(format[i]);
+	count++;
 	}
 	i++;
 	}
 va_end(args);
-return (0);
+printf("%d", count);
+return (count);
 }
