@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include <string.h>
+#include "holberton.h"
 /**
  * _printarg - writes the character c to stdout
  * @c: The character to print
@@ -9,5 +9,5 @@
  */
 int _printarg(char *c)
 {
-	return (write(1, c, strlen(c)));
+	return (write(1, c, _strlen(c)));
 }

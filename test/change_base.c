@@ -11,7 +11,12 @@ char *change_base(int num, int base)
 	char *ptr;
 	int i = 0;
 
-	ptr = malloc(50);
+	ptr = malloc(sizeof(char) * 50);
+	if (ptr == '\0')
+	{
+	
+	return (0);
+	}
 	ptr[49] = '\0';
 	do {
 		ptr[48 - i] = symbols[num % base];

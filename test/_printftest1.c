@@ -6,7 +6,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	int i, j, count = 0, count_aux = 0;
 	char *copyfmt;
 	fn_t fmt[] = {
 			{"c", p_char},
@@ -30,7 +30,11 @@ int _printf(const char *format, ...)
 		while (fmt[j].ob != NULL)
 		{
 			if (copyfmt[i] == *fmt[j].ob)
-				count += fmt[j].type(args);
+			{ count_aux = fmt[j].type(args);
+				if (count_aux >= 0)
+					count += count_aux;
+				else
+					return (-1); }
 			j++;
 		}
 

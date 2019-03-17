@@ -9,7 +9,9 @@ int p_char(va_list args)
 	char *ch;
 	int i;
 
-	ch = malloc(2);
+	ch = malloc(sizeof(char) * 2);
+	if (ch == '\0')
+	return (-1);
 	ch[0] = va_arg(args, int);
 	i = _printarg(ch);
 	free(ch);
@@ -62,6 +64,8 @@ int p_int(va_list args)
 		num = -num;
 	}
 	str = change_base(num, 10);
+	if (str == '\0')
+	return (-1);
 	i = _printarg(str + 49 - str[0]);
 	free(str);
 return (i);

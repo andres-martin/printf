@@ -23,4 +23,5 @@ int p_string(va_list args);
 int p_percent(va_list args __attribute__((unused)));
 int p_int(va_list args);
 char *_strdup(const char *str);
+int _strlen(char *s);
 #endif
