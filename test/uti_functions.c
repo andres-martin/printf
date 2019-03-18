@@ -23,7 +23,11 @@ int p_rev(va_list args)
 	}
 return (i);
 }
-
+/**
+ * p_bin - converts an integer to binary
+ * @args: va_list
+ * Return: i
+*/
 int p_bin(va_list args)
 {
 	char binary[1000];
@@ -34,9 +38,8 @@ int p_bin(va_list args)
 	for (i = 0; numb > 0; i++)
 	{
 		binary[i] = numb % 2;
-		numb /= 2;	
+		numb /= 2;
 	}
-
 	for (j = i - 1; j >= 0; j--)
 		_putint(binary[j] + '0');
 return (i);
