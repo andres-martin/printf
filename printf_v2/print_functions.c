@@ -22,10 +22,13 @@ return (i);
 int p_string(va_list args)
 {
 	char *s;
-	int i;
+	int i = 6;
 
 	s = va_arg(args, char*);
+	if (s)
 	i = _printarg(s);
+	else
+	_printarg("(null)");
 return (i);
 }
 /**
@@ -61,9 +64,6 @@ int p_int(va_list args)
 		num = -num;
 	}
 	str = change_base(num, 10);
-	if (str == '\0')
-	return (-1);
-	i = _printarg(str + 49 - str[0]);
-	free(str);
+	i = _printarg(str);
 return (i);
 }

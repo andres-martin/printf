@@ -9,5 +9,8 @@
  */
 int _printarg(char *c)
 {
+	if (c[0] == '\0')
+	return (write(1, &c[0], 1));
+	else
 	return (write(1, c, _strlen(c)));
 }
