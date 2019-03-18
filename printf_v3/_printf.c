@@ -39,5 +39,6 @@ int _printf(const char *format, ...)
 		}
 		va_end(args);
 	}
+free(copyfmt);
 return (count[1]);
 }
