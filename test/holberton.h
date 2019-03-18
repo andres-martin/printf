@@ -9,7 +9,7 @@
 typedef struct fn
 {
 	char *ob;
-	void (*type)(va_list var);
+	int (*type)(va_list var);
 } fn_t;
 
 int _putchar(char c);
