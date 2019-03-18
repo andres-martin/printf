@@ -6,15 +6,12 @@
 */
 int p_char(va_list args)
 {
-	char *ch;
+	char ch[2];
 	int i;
 
-	ch = malloc(sizeof(char) * 2);
-	if (ch == '\0')
-	return (-1);
+	ch[1] = '\0';
 	ch[0] = va_arg(args, int);
 	i = _printarg(ch);
-	free(ch);
 return (i);
 }
 /**
