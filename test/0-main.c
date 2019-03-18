@@ -28,7 +28,7 @@ _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n", "Querido amigo holberton");
     printf("Unknown:[%r]\n");
-	_printf("%b\n", 98);
+	_printf("This is a binary [%b]\n", 98);
 	_printf("%b\n", 200);
     return (0);
 }
