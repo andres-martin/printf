@@ -17,14 +17,14 @@ int main(void)
 len =  _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
 len2 =  printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
 
-//len =  _printf("%c%cth %s%s a%cg%s: You\n", 'W','i', "some", "more", 'r', "s");
-//len2 =  printf("%c%cth %s%s a%cg%s: You\n", 'W','i', "some", "more", 'r', "s");
-//len2 =  printf("%!\n");
-//  len = _printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
-//  len2 = printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
-//  printf("String:[%s]\n", "I am a string !");
-//   _printf(NULL);
-//  printf(NULL);
+len =  _printf("%c%cth %s%s a%cg%s: You\n", 'W','i', "some", "more", 'r', "s");
+len2 =  printf("%c%cth %s%s a%cg%s: You\n", 'W','i', "some", "more", 'r', "s");
+len2 =  printf("%!\n");
+  len = _printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
+ len2 = printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
+ printf("String:[%s]\n", "I am a string !");
+  _printf(NULL);
+ printf(NULL);
   ui = (unsigned int)INT_MAX + 1024;
   addr = (void *)0x7ffe637541f0;
   _printf("Length yo:[%d, %i]\n", len, len);
