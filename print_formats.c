@@ -6,7 +6,7 @@
  * @args: arguments to print
  * Return: number of characters printed.
 */
-int print_formats(int i, char *copyfmt, va_list args)
+int *print_formats(int i, char *copyfmt, va_list args)
 {
 	fn_t fmt[] = {
 			{"c", p_char},
@@ -16,13 +16,27 @@ int print_formats(int i, char *copyfmt, va_list args)
 			{"d", p_int},
 			{NULL, NULL}
 			};
-	int j = 0, count2 = 0;
+	int j = 0, k = 1, *count2;
+	int ctbuffer2[2];
 
-		while (fmt[j].ob != NULL)
+	i++;
+	count2 = &ctbuffer2[0];
+	count2[0] = 0;
+	count2[1] = 0;
+	while (fmt[j].ob != NULL)
+	{
+		if (copyfmt[i] == *fmt[j].ob)
 		{
-			if (copyfmt[i] == *fmt[j].ob)
-				count2 = fmt[j].type(args);
-			j++;
+			count2[1] = fmt[j].type(args);
+			break;
 		}
+		j++;
+	}
+	if (fmt[j].ob == NULL && copyfmt[i] != '\0')
+	{
+	_putchar("%");
+	_putchar(&copyfmt[i]);
+	}
+	count2[0] = k;
 return (count2);
 }

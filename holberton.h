@@ -24,5 +24,5 @@ int p_percent(va_list args __attribute__((unused)));
 int p_int(va_list args);
 char *_strdup(const char *str);
 int _strlen(char *s);
-int print_formats(int i, char *copyfmt, va_list args);
+int *print_formats(int i, char *copyfmt, va_list args);
 #endif

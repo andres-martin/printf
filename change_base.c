@@ -8,20 +8,14 @@
 char *change_base(int num, int base)
 {
 	char symbols[] = "0123456789ABCDEF";
+	static char array[100];
 	char *ptr;
-	int i = 0;
 
-	ptr = malloc(sizeof(char) * 50);
-	if (ptr == '\0')
-	{
-		return (0);
-	}
-	ptr[49] = '\0';
+	ptr = &array[99];
+	*ptr = '\0';
 	do {
-		ptr[48 - i] = symbols[num % base];
+		*--ptr = symbols[num % base];
 		num /= base;
-		i++;
 	} while (num != 0);
-	ptr[0] = i;
 return (ptr);
 }

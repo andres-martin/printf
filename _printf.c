@@ -6,24 +6,38 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	int i = 0, *count, *count3;
+	int ctbuffer[2];
+	int ctbuffer3[2];
 	char *copyfmt;
 	va_list args;
 
-	copyfmt = _strdup(format);
-	va_start(args, format);
-	i = 0;
-	while (copyfmt[i] != '\0')
+	count = &ctbuffer[0];
+	count3 = &ctbuffer3[0];
+	count[0] = 0;
+	count[1] = -1;
+	if (format != NULL)
 	{
-	if (copyfmt[i] == '%')
-	{
-		i++;
-		count += print_formats(i, copyfmt, args);
+		count[1] = 0;
+		copyfmt = _strdup(format);
+		va_start(args, format);
+		while (copyfmt[i] != '\0')
+		{
+			if (copyfmt[i] == '%')
+			{
+				count3 = print_formats(i, copyfmt, args);
+				if (count3[1] == -1)
+				return (-1);
+				count[1] += count3[1];
+				i += count3[0];
+			}
+			else
+			{
+				count[1] += _putchar(&copyfmt[i]);
+			}
+			i++;
+		}
+		va_end(args);
 	}
-	else
-		count += _putchar(&copyfmt[i]);
-	i++;
-	}
-va_end(args);
-return (count);
+return (count[1]);
 }
