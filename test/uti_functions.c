@@ -23,3 +23,21 @@ int p_rev(va_list args)
 	}
 return (i);
 }
+
+int p_bin(va_list args)
+{
+	char binary[1000];
+	int i, j;
+	int numb;
+
+	numb = va_arg(args, int);
+	for (i = 0; numb > 0; i++)
+	{
+		binary[i] = numb % 2;
+		numb /= 2;	
+	}
+
+	for (j = i - 1; j >= 0; j--)
+		_putint(binary[j] + '0');
+return (i);
+}
