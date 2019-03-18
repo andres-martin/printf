@@ -36,6 +36,7 @@ int *print_formats(int i, char *copyfmt, va_list args)
 	{
 	_putchar("%");
 	_putchar(&copyfmt[i]);
+	count2[1] += 2;
 	}
 	count2[0] = k;
 return (count2);
