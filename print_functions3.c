@@ -63,4 +63,24 @@ int p_hex_low(va_list args)
 	i += _printarg(str);
 return (i);
 }
+/**
+* p_string_esp - prints an octal number.
+* @args: arguments to print.
+* Return: number of characters printed.
+*/
+int p_string_esp(va_list args)
+{
+	char *s;
+	int i = 6;
+
+	s = va_arg(args, char*);
+	if (s)
+	{
+	s = replace_str(s);
+	i = _printarg(s);
+	}
+	else
+	_printarg("(null)");
+return (i);
+}
 
