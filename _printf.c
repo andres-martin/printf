@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int ctbuffer[2];
 	int ctbuffer3[2];
 	char *copyfmt;
-	char copyarray[100];
+	char copyarray[10000];
 	va_list args;
 
 	count = &ctbuffer[0];
