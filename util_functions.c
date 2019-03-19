@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * p_rev - prints a string in reverse
  * @args: va_list
@@ -30,17 +29,12 @@ return (i);
 */
 int p_bin(va_list args)
 {
-	char binary[1000];
-	int i, j;
-	int numb;
+	int i;
+	unsigned int numb;
+	char *buffer;
 
 	numb = va_arg(args, int);
-	for (i = 0; numb > 0; i++)
-	{
-		binary[i] = numb % 2;
-		numb /= 2;
-	}
-	for (j = i - 1; j >= 0; j--)
-		_putint(binary[j] + '0');
+	buffer = change_base(numb, 2);
+	i = _printarg(buffer);
 return (i);
 }
