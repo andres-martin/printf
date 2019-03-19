@@ -14,14 +14,45 @@ int main(void)
  unsigned int ui;
  void *addr;
 
+
+
+len = _printf("suma maximos:%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+len2 = printf("suma maximos:%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+
+len = _printf("Positive:[%d]\n", 762534);
+len2 = printf("Positive:[%d]\n", 762534);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("Negative:[%d]\n", -762534);
+len2 =  printf("Negative:[%d]\n", -762534);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("Positive:[%d]\n", 0);
+len2 = printf("Positive:[%d]\n", 0);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("Positive:[%d]\n", INT_MAX);
+len2 = printf("Positive:[%d]\n", INT_MAX);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("MIN Negative como d:[%d]\n", INT_MIN);
+len2 = printf("MIN Negative como d:[%d]\n", INT_MIN);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("MIN Negative como i:[%i]\n", INT_MIN);
+len2 = printf("MIN Negative como i:[%i]\n", INT_MIN);
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
 len = _printf("%");
 len2 =  printf("%");
 _printf("Length yo:[%d, %i]\n", len, len);
 printf("Length ellos:[%d, %i]\n", len2, len2);
 len = _printf("%c", '\0');
 len2 =  printf("%c", '\0');
-_printf("Length yo:[%d, %i]\n", len, len);
-printf("Length ellos:[%d, %i]\n", len2, len2);
+_printf("Length con jaiber:[%d, %i]\n", len, len);
+printf("Length con jaiber:[%d, %i]\n", len2, len2);
 len =  _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
 len2 =  printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
 

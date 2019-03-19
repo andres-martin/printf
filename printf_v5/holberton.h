@@ -17,7 +17,7 @@ typedef struct fn
 int _putchar(char *c);
 int _printf(const char *format, ...);
 int _printarg(char *c);
-char *change_base(int num, int base);
+char *change_base(unsigned int num, int base);
 int p_char(va_list args);
 int p_string(va_list args);
 int p_percent(va_list args __attribute__((unused)));
