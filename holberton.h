@@ -27,4 +27,9 @@ int p_rev(va_list args);
 char *_strcpy(char *dest, const char *str);
 int _strlen(char *s);
 int *print_formats(int i, char *copyfmt, va_list args);
+int p_unsigned(va_list args);
+int p_octal(va_list args);
+int p_hex_upper(va_list args);
+int p_hex_low(va_list args);
+char *change_hex_low(unsigned int num, int base);
 #endif

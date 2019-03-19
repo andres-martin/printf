@@ -39,20 +39,19 @@ int p_bin(va_list args)
 return (i);
 }
 /**
- * p_bin - converts an integer to binary
+ * p_add - print the address of a string
  * @args: va_list
  * Return: i
 */
-int p_padd(va_list args)
+int p_add(va_list args)
 {
+	int i;
+	unsigned int var;
+	char *buffer;
 
-
+	var = va_arg(args, int);
+	buffer = change_hex_low(var, 16);
+	i = _printarg("0x");
+	i += _printarg(buffer);
+return (i);
 }
-
-
-
-
-
-
-
-
