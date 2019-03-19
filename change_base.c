@@ -5,7 +5,7 @@
 * @base: base to convert
 * Return: pointer to array - with the number converted
 */
-char *change_base(int num, int base)
+char *change_base(unsigned int num, int base)
 {
 	char symbols[] = "0123456789ABCDEF";
 	static char array[100];
