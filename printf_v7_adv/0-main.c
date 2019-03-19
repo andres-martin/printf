@@ -18,7 +18,7 @@ int main(void)
   _printf("Unknown:[%r]\n");
   _printf("Unknown mio:[%r]\n", "Reversar este String");
   printf("Unknown:[%r]\n", "Reversar");
-len = _printf("binario [%b]\n", 98);
+len = _printf("%b", UINT_MAX);
 
 _printf("Length yo:[%d, %i]\n", len, len);
 
