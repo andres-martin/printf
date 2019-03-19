@@ -38,6 +38,10 @@ int *print_formats(int i, char *copyfmt, va_list args)
 	_putchar(&copyfmt[i]);
 	count2[1] += 2;
 	}
+	if (fmt[j].ob == NULL && copyfmt[i] == '\0')
+	{
+	count2[1] = -1;
+	}
 	count2[0] = k;
 return (count2);
 }
