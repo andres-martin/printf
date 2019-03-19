@@ -40,7 +40,7 @@ Prints **ARGUMENTS** according to **FORMAT** especified, returns the numbers of 
 - `_printf("Positive:[%d]\n", 762534);` Prints an integer followed by a new line.
 - `_printf("String:[%s]\n", "I am a string !");` Prints a string followed by a new line.
 - `_printf("Character:[%c]\n", 'H');` Prints a character followed by a new line.
-- `_printf("Unknown:[%r]\n", "Reverse me");` Prints a string in reverse followed by a new line.
+- `_printf("Unknown:[%r]\n", "Reverse me");` Prints a string in reverse order followed by a new line.
 
 #### About
 This project was created by - [Andres Martin](https://github.com/andres-martin) and [Heimer Rojas](https://github.com/HeimerR) at Holberton School Colombia cohort 0.
