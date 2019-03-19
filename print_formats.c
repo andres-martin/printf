@@ -16,6 +16,10 @@ int *print_formats(int i, char *copyfmt, va_list args)
 			{"d", p_int},
 			{"b", p_bin},
 			{"r", p_rev},
+			{"u", p_unsigned},
+			{"o", p_octal},
+			{"x", p_hex_low},
+			{"X", p_hex_upper},
 			{NULL, NULL}
 			};
 	int j = 0, k = 1, *count2;
@@ -28,22 +32,16 @@ int *print_formats(int i, char *copyfmt, va_list args)
 	while (fmt[j].ob != NULL)
 	{
 		if (copyfmt[i] == *fmt[j].ob)
-		{
-			count2[1] = fmt[j].type(args);
-			break;
-		}
+		{ count2[1] = fmt[j].type(args);
+			break; }
 		j++;
 	}
 	if (fmt[j].ob == NULL && copyfmt[i] != '\0')
-	{
-	_putchar("%");
+	{ _putchar("%");
 	_putchar(&copyfmt[i]);
-	count2[1] += 2;
-	}
+	count2[1] += 2; }
 	if (fmt[j].ob == NULL && copyfmt[i] == '\0')
-	{
-	count2[1] = -1;
-	}
+	{ count2[1] = -1; }
 	count2[0] = k;
 return (count2);
 }
