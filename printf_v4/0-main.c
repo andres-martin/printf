@@ -11,20 +11,33 @@ int main(void)
 {
   int len;
   int len2;
-  unsigned int ui;
-  void *addr;
+ unsigned int ui;
+ void *addr;
 
-//  _printf("Character:[%c]\n", 'H');
-//  printf("Character:[%c]\n", 'H');
-  len = _printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
-  len2 = printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
-//  printf("String:[%s]\n", "I am a string !");
-   _printf(NULL);
-  printf(NULL);
+len =  _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
+len2 =  printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W','i', "some", "more", 'r', "s", "", "know", 't', ",Jon", '\n');
+
+//len =  _printf("%c%cth %s%s a%cg%s: me\n", 'W','i', "some", "more", 'r', "s");
+//len2 =  printf("%c%cth %s%s a%cg%s: me\n", 'W','i', "some", "more", 'r', "s");
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length yo:[%d, %i]\n", len2, len2);
+//len = _printf("%k");
+//len2 =  printf("%k");
+len = _printf("%k");
+len2 = printf("%k");
+//  len = _printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
+// len2 = printf("Complete the sentence: You %s nothig. Jon snow. \n", (char *)0);
+// printf("String:[%s]\n", "I am a string !");
+ // _printf(NULL);
+// printf(NULL);
   ui = (unsigned int)INT_MAX + 1024;
   addr = (void *)0x7ffe637541f0;
   _printf("Length yo:[%d, %i]\n", len, len);
   printf("Length ellos:[%d, %i]\n", len2, len2);
+len = _printf("impresion de vacio%shola\n", "");
+len2 = _printf("impresion de vacio%shola\n", "");
+_printf("Length yo:[%d, %i]\n", len, len);
+printf("Length ellos:[%d, %i]\n", len2, len2);
   _printf("Negative:[%d]\n", -762534);
   printf("Negative:[%d]\n", -762534);
   _printf("Unsigned:[%u]\n", ui);
