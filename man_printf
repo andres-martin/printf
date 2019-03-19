@@ -1,0 +1,29 @@
+.TH man 2 "19 Mar 2019" "0.32" "_printf man page"
+.SH NAME
+.B _printf - print data
+.SH SYNOPSIS
+_printf [FORMAT const char *] ARGUMENTS [va_list] ...
+.SH DESCRIPTION
+Print ARGUMENTS according to FORMAT especified, returns the numbers of characters printed on success, If an output throws an error a negative value is returned.
+.SH OPTIONS
+.B _printf
+has several options to print a especific type of data, here are the followig options available:
+
+.B %c
+prints a character to stdout.
+
+.B %s
+prints a string to stdout.
+
+.B %i
+prints an integer to stdout.
+
+.B %d
+prints an integer to stdout.
+
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Heimer Rojas, Andres Martin.
