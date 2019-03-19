@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	int ctbuffer[2];
 	int ctbuffer3[2];
 	char *copyfmt;
+	char copyarray[100];
 	va_list args;
 
 	count = &ctbuffer[0];
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 	if (format != NULL)
 	{
 		count[1] = 0;
-		copyfmt = _strdup(format);
+		copyfmt = _strcpy(copyarray, format);
 		va_start(args, format);
 		while (copyfmt[i] != '\0')
 		{
@@ -39,6 +40,5 @@ int _printf(const char *format, ...)
 		}
 		va_end(args);
 	}
-free(copyfmt);
 return (count[1]);
 }
