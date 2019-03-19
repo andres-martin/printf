@@ -11,7 +11,7 @@ int p_char(va_list args)
 
 	ch[1] = '\0';
 	ch[0] = va_arg(args, int);
-	i = _printarg(ch);
+	i = _putchar(ch);
 return (i);
 }
 /**
