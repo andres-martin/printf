@@ -20,6 +20,8 @@ int *print_formats(int i, char *copyfmt, va_list args)
 			{"o", p_octal},
 			{"x", p_hex_low},
 			{"X", p_hex_upper},
+			/*{"S", p_string_esp},*/
+			{"p", p_add},
 			{NULL, NULL}
 			};
 	int j = 0, k = 1, *count2;
