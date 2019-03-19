@@ -21,6 +21,24 @@ prints an integer to stdout.
 .B %d
 prints an integer to stdout.
 
+.B %b
+converts a number to binary.
+
+.B %r
+reverses a string.
+
+.B %u
+prints an unsigned integer.
+
+.B %o
+converts a number to octal base.
+
+.B %x %X
+converts a number to hexadecimal.
+
+.B %p
+prints the memory address of an argument. 
+
 .SH SEE ALSO
 .I printf(3)
 .SH BUGS
