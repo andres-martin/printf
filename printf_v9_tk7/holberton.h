@@ -32,5 +32,5 @@ int p_octal(va_list args);
 int p_hex_upper(va_list args);
 int p_hex_low(va_list args);
 char *change_hex_low(unsigned int num, int base);
-int p_padd(va_list args);
+int p_add(va_list args);
 #endif
