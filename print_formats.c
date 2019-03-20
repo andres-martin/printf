@@ -22,6 +22,7 @@ int *print_formats(int i, char *copyfmt, va_list args)
 			{"X", p_hex_upper},
 			{"S", p_string_esp},
 			{"p", p_add},
+			{"R", p_rot13},
 			{NULL, NULL}
 			};
 	int j = 0, k = 1, *count2;
