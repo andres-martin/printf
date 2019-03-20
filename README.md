@@ -17,9 +17,9 @@ Prints **ARGUMENTS** according to **FORMAT** especified, returns the numbers of 
   - Use format specifiers for desired output
   - Function returns `-1` upon error and `(null)` if a string argument is **NULL**
 
-### Format Specifiers
+## Format Specifiers
 
-**_printf** has several options to print a especific type of data, here are the followig options available:
+**_printf** has several options to print a especific type of data, here are the following options available:
 
 | Format Specifier | Description |
 | ------ | ------ |
