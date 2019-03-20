@@ -8,7 +8,7 @@ Recreation of function printf from the **C** standard library.
 int _printf(const char *format, ...)
 ```
 ## Description
-Prints **ARGUMENTS** according to **FORMAT** especified, returns the numbers of characters printed on success, If an output throws an error a negative value is returned.
+Prints **ARGUMENTS** according to **FORMAT** especified, returns the total of characters printed on success, If an output throws an error a negative value is returned instead.
 
 ## Usage
 
