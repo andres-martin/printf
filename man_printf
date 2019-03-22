@@ -41,7 +41,12 @@ prints the memory address of an argument.
 
 .SH SEE ALSO
 .I printf(3)
+
+.SH EXAMPLE USAGE
+
+_printf("Positive:[%d]", 762534) Prints an integer.
+
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Heimer Rojas, Andres Martin.
+Heimer Rojas, Andres Martin at Holberton School Bogota Colombia cohort 0.

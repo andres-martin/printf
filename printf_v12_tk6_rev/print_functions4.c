@@ -15,7 +15,7 @@ char *replace_str(char *s)
 	ptr = &buffer[0];
 	while (s[i])
 	{
-		if (s[i] < 32)
+		if (s[i] < 32 || s[i] >= 127)
 		{ ptr[j] = 92;
 		ptr[j + 1] = 120;
 		ptr2 = change_base(s[i], 16);
